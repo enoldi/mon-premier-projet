@@ -1,0 +1,13 @@
+<li [ngClass]="{'list-group-item': true, 'list-group-item-success': statusAppariel === 'allumer', 'list-group-item-danger': statusAppariel === 'etient'}">
+  <h4 [ngStyle]="{color: getColor()}">Ceci est dans appariel : {{ apparielName }} --- Statut : {{ getStatuts() }}</h4>
+  <a [routerLink]="[id]">Details</a>
+  <button class="btn btn-success"
+          *ngIf="statusAppariel === 'etient'"
+          (click)="onSwitch()">
+    Allumer</button>
+
+  <button class="btn btn-danger"
+          *ngIf="statusAppariel === 'allumer'"
+          (click)="onSwitch()">
+    Etiendre</button>
+</li>
